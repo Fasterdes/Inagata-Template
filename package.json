@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:staged": "eslint --ext .js,.jsx",
+    "lint:fix": "pnpm run lint -- --fix",
+    "format": "pnpx prettier --config .prettierrc \"./**/*.{js,jsx,json}\" --check",
+    "format:fix": "pnpm run format --config .prettierrc \"./**/*.{js,jsx,json}\" --write",
+    "prepare": "husky install",
+    "pre:commit" : "pnpm run lint && pnpm run:fix"
   },
   "dependencies": {
     "next": "12.3.1",
@@ -15,6 +21,11 @@
   },
   "devDependencies": {
     "eslint": "8.24.0",
-    "eslint-config-next": "12.3.1"
+    "eslint-config-next": "12.3.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
   }
 }

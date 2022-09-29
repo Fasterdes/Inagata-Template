@@ -1,0 +1,8 @@
+.next
+package.json
+.pnpm-lock.yaml
+node_modules
+public
+.vscode
+build
+dist
