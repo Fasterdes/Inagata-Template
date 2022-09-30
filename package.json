@@ -12,9 +12,14 @@
     "format": "pnpx prettier --config .prettierrc \"./**/*.{js,jsx,json}\" --check",
     "format:fix": "pnpm run format --config .prettierrc \"./**/*.{js,jsx,json}\" --write",
     "prepare": "husky install",
-    "pre:commit" : "pnpm run lint && pnpm run:fix"
+    "pre:commit": "pnpm run lint && pnpm format:fix",
+    "pre:push": "pnpm run format && pnpm run build"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.3.4",
+    "@emotion/react": "11",
+    "@emotion/styled": "11",
+    "framer-motion": "6",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
